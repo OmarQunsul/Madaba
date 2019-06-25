@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <title>My Cheat Sheet | Omar Qunsul</title>
+    <title>Homepage | Madaba</title>
   </head>
   <body>
     <div class="container content">
@@ -21,150 +21,12 @@
           <div class="card">
             <div class="card-header">
               <h1>
-                Resize JPG images using ImageMagick
+                Introduction
               </h1>
             </div>
             <div class="card-body">
               <code>
-                mkdir Resized
-                <br/>
-                for i in $( ls *.JPG); do convert -resize 28% $i Resized/$i; done
               </code>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1>
-                Docker Useful Shortcuts
-              </h1>
-            </div>
-            <div class="card-body">
-              <code>
-                # Remove Stopped Containers
-                <br/>
-                docker rm $(docker ps -f status=exited -q)
-                <br/>
-                # Remove Dangling Images
-                <br/>
-                docker rmi $(docker images -f "dangling=true" -q)
-                <br/>
-              </code>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1>
-                Git Pull Remote Branch
-              </h1>
-            </div>
-            <div class="card-body">
-              <code>
-                git checkout --track origin/remove_branch
-              </code>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1>
-                Start Postgres/Solr in Docker
-              </h1>
-            </div>
-            <div class="card-body">
-              <code>
-                docker network create todo
-                <br/>
-                docker run --name todo_database --network todo -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=test123 -e POSTGRES_DB=todo -d postgres:9.6
-                <br/>
-                docker run --name todo_solr --network todo -d -p 8983:8983 -t solr:7.5.0-slim
-                <br/>
-                docker exec -it --user=solr todo_solr bin/solr create_core -c core1
-                <br/>
-                docker run --name todo_app -v /root/web_storage:/app/public/storage --network todo -p 4001:4000 -d develop.qunsul.com:5043/todo
-              </code>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1>
-                Ruby Sample Solr Code
-              </h1>
-            </div>
-            <div class="card-body">
-              <code>
-                require 'uri'
-                <br/>
-                require 'rsolr'
-                <br/>
-                solr = RSolr.connect :url => 'http://localhost:8983/solr/core1'
-                <br/>
-
-                response = solr.get 'select', :params => {:q => '*:*'}
-                <br/>
-                response = solr.get 'select',
-                <br/>
-                :params => {:q => 'title:*Qunsul*'}
-                <br/>
-
-                response = SOLR.get 'select', :params => {q: 'type:User', sort: 'rate desc', start:0, rows: 15}; nil
-                <br/>
-                response["response"]["docs"]
-                <br/>
-
-                solr.delete_by_query '*:*'
-                <br/>
-
-                documents = [{:id=>1, :price=>1.00, :title => "omar", :body => "qunsul"}, {:id=>2, :price=>10.50, :title => "Jordan", :body => "Amman is the capital of Jordan"}]
-                <br/>
-                solr.add documents
-                <br/>
-                solr.commit
-                <br/>
-              </code>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1>
-                Docker Swarm Init / Start a Service
-              </h1>
-            </div>
-            <div class="card-body">
-              <code>
-                docker swarm init --advertise-addr INTERNAL_IP_ADDRESS
-                <br/>
-                docker service create --replicas 3 -p 9292:9292 --host database1:DATABASE_INTERNAL_IP -e RAILS_ENV=production --name chessduo chessduo:latest
-              </code>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1>
-                Add Swap Memory to Linux Virtual Machine (Works on Digital Ocean)
-              </h1>
-            </div>
-            <div class="card-body">
-              <code>
-                sudo fallocate -l 2G /swapfile
-                <br/>
-                sudo chmod 600 /swapfile
-                <br/>
-                sudo mkswap /swapfile
-                <br/>
-                sudo swapon /swapfile
-                <br/>
-                free -h
-              </code>
-            </div>
-            <div class="card-footer">
-              <a class="float-right" href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04">
-                Original Link: How To Add Swap Space on Ubuntu 16.04
-              </a>
             </div>
           </div>
 
