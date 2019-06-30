@@ -65,3 +65,7 @@ h3 {
   font-weight: 800;
   margin-bottom: 0;
 }
+
+canvas {
+  border: 1px solid #DDD;
+}

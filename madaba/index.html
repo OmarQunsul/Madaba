@@ -25,6 +25,19 @@
         }
 
         drawGraph(graph1, 'graph1');
+
+        var tree1 = {
+          nodes: {
+            a: ['b', 'c'],
+            b: ['d', 'e'],
+            c: ['f', 'g', 'l2'],
+            g: ['z1', 'y1'],
+            d: ['l', 'm', 'n']
+          }
+        }
+
+        drawTree(tree1, 'tree1');
+
     });
 
   </script>
@@ -40,14 +53,37 @@
           <div class="card">
             <div class="card-header">
               <h1>
-                Introduction
+                Trees
+              </h1>
+            </div>
+            <div class="card-body">
+
+              <p>Documentation is coming later</p>
+
+              <div class="text-center">
+                <canvas class="graph" id="tree1" width="500" height="350"></canvas>
+              </div>
+
+              <div class="code">
+
+              <code>
+
+              </code>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h1>
+                Graphs
               </h1>
             </div>
             <div class="card-body">
 
               <p>Detailed API documentation is coming later</p>
 
-              <div class="center">
+              <div class="text-center">
                 <canvas class="graph" id="graph1" width="500" height="350"></canvas>
               </div>
 
@@ -77,6 +113,7 @@
               </div>
             </div>
           </div>
+
 
         </div>
       </div>
