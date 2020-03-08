@@ -35,7 +35,6 @@
         }
 
         drawTree(tree1, 'tree1');
-
     });
 
   </script>
@@ -64,9 +63,28 @@
 
               <div class="code">
 
-              <code>
+              <pre><code>
+var graph1 = {
+  nodes: ['a', 'b', 'c', 'd', 'e'],
+  edges: [[0, 1, 1, true], [1, 2, 1], [2, 3, 1], [0, 3, 20, true], [3, 4, 1], [4, 0, 3, true]],
+  highlight: [1, 3, 4],
+  center_node: 0
+}
 
-              </code>
+drawGraph(graph1, 'graph1');
+
+var tree1 = {
+  nodes: {
+    a: ['b', 'c'],
+    b: ['d', 'e'],
+    c: ['f', 'g', 'l2'],
+    g: ['z1', 'y1'],
+    d: ['l', 'm', 'n']
+  }
+}
+
+drawTree(tree1, 'tree1');
+              </code></pre>
               </div>
             </div>
           </div>
